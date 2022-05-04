@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <%- include('../views/partials/head.ejs') %>
+</head>
+
+<body>
+    <header>
+        <%- include('../views/partials/header.ejs') %>
+    </header>
+    <main>
+        <div class="center col-4">
+            <h1 class="card-title">Create Collection</h1>
+            <div class="card ">
+                <div class="card-body">
+                    <div class="alert alert-warning" id="pageBanner" role="alert" style="display:none"></div>
+                    <form method="POST" action="/createGroupRequest">
+                        <div class="row">
+                            <div class="col">
+                                <label>Collection Name - <small>80 Character Limit</small></label>
+                                <input type="text" class="form-control" id="groupName" placeholder="Group Name" name="groupName" maxlength="80">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>Postcode</label>
+                                <small>Please use a valid postcode - validation has not been added on this page yet</small>
+                                <input type="text" class="form-control" id="groupPostcode" placeholder="Postcode" name="groupPostcode">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <!-- update to select -->
+                                <label>Category</label>
+                                <select class="form-select" aria-label="Default select example" name="categorySelector" id="categorySelector">
+                                    <option disabled selected>Category</option>
+                                    <option value="Gaming" name="Gaming">Gaming</option>
+                                    <option value="Outdoor Sports" name="Outdoor Sports">Outdoor Sports</option>
+                                    <option value="Indoor Sports" name="Indoor Sports">Indoor Sports</option>
+                                    <option value="Model Making" name="Model Making">Model Making</option>
+                                    <option value="Creative Hobbies" name="Creative Hobbies">Creative Hobbies</option>
+                                    <option value="Sports and Adventure Enthusiasts" name="Sports and Adventure Enthusiasts">Sports and Adventure Enthusiasts</option>
+                                    <option value="Indoor Hobbies" name="Indoor Hobbies">Indoor Hobbies</option>
+                                    <option value="Healthy Living" name="Healthy Living">Healthy Living</option>
+                                    <option value="Computers and Technology" name="Computers and Technology">Computers and Technology</option>
+                                    <option value="Scientific Pursuits" name="Scientific Pursuits">Scientific Pursuits</option>
+                                    <option value="Lifestyle" name="Lifestyle">Lifestyle</option>
+                                    
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>Group Description - <small>300 Character Limit</small></label>
+                                <textarea class="form-control" id="groupDescription" name="groupDescription" rows="4" maxlength="300"></textarea>
+
+                                <!-- <input type="password" class="form-control" id="passwordVerify" placeholder="Repeat Password"> -->
+                            </div>
+                        </div>
+                        <div class="row buttonRow">
+                            <div class="col grid">
+                                <small>These details can't be changed later</small>
+                                <button type="submit" id="createGroupSubmitButton" class="btn btn-success mb-2">Create Group</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+    </footer>
+</body>
+
+</html>

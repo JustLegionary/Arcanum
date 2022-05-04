@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <%- include('../views/partials/head.ejs') %>
+</head>
+
+<body>
+    <header>
+        <%- include('../views/partials/header.ejs') %>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 id="groupTitle" class="display-4">
+                <%= group %>
+            </h1>
+        </div>
+
+        <div class="container">
+            <div class="row align-items-start">
+                <div class="col-8">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            Main group content
+                        </div>
+                    </div>
+                    <div class="groupPosts">
+                        <% for(var i=0; i < posts.length; i++){ %>
+                            <div class="card shadow post">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <%= posts[i].postTitle %>
+                                    </h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Post Author</h6>
+                                    <p class="card-text">
+                                        <%= posts[i].postText %>
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <p>
+                                                <% if((posts[i].likedBy) &&
+                                                    (posts[i].likedBy.includes(session.userId))){%>
+                                                    <button type="button" class="btn btn-secondary unlikePost" name="<%= posts[i]._id %>" postTitle="<%= posts[i].postTitle %>">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                            <path fill-rule="evenodd"
+                                                                d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z">
+                                                            </path>
+                                                        </svg>
+                                                        <small> <%= posts[i].likedBy.length %></small>
+                                                    </button>
+                                                    <%}else{%>
+                                                        <button type="button" class="btn btn-secondary likePost" name="<%= posts[i]._id %>" postTitle="<%= posts[i].postTitle %>">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" fill="currentColor" class="bi bi-heart"
+                                                                viewBox="0 0 16 16">
+                                                                <path fill-rule="evenodd"
+                                                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z">
+                                                                </path>
+                                                            </svg>
+                                                            <small> <%= posts[i].likedBy.length %></small>
+                                                        </button>
+                                                        <%}%>
+                                            </p>
+                                        </div>
+                                        <div class="col-6 ">
+                                            <p class="card-text text-muted text-end">
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
+                    </div>
+                </div>
+                <div class="col-4 fixed pull-left">
+                    <div class=" card shadow">
+                        <div class="card-body">
+                            This group is restricted until you joined
+                            <div class="row">
+                                <form action="/joinGroup/<%= group %>/" method="POST">
+                                    <button type="submit" class="btn btn-success mb-2">Join Group</button>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+    <footer>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+body {
+    background-color: #FAFAFA;
+    padding-top: 50px;
+}
+
+.home-page {
+    margin-top: 200px
+}
+
+.search-box {
+    margin-top: 100px;
+}
+
+.postcodeInput:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #ced4da;
+    outline: 0;
+    box-shadow: 0 0 0 0 !important;
+}
+
+.postcodeInput {
+    border-radius: 32px !important;
+}
+
+.form {
+    position: relative
+}
+
+.form .bi-search {
+    position: absolute;
+    right: 15px;
+    color: #9ca3af
+}
+
+.container {
+    padding-top: 50px;
+}
+
+.groupPosts {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.fixed {
+    background-position-x: fixed !important;
+    right: 0px;
+}
+
+.post {
+    margin-top: 25px;
+}
+
+.registerForm {
+    margin-top: 20px;
+}
+
+.registerFormElement {
+    margin-top: 20px;
+}
+
+.registerFormElement label {
+    padding-left: 13px;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+p.errorMessage {
+    text-align: center;
+    margin: 0;
+}
+
+.grid {
+    display: grid;
+    place-items: center;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form,
+.updateTable {
+    text-align: left;
+}
+
+form label {
+    padding-left: 2px;
+}
+
+form .row {
+    padding-bottom: 1rem;
+}
+
+form .buttonRow,
+form .buttonLabelRow {
+    padding-bottom: 0;
+}
+
+.buttonRow {
+    text-align: center;
+}

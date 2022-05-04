@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <%- include('../views/partials/head.ejs') %>
+</head>
+
+<body>
+    <header>
+        <%- include('../views/partials/header.ejs') %>
+    </header>
+
+    <main>
+        <div class="center">
+            <div class="page-content page-container" id="page-content">
+                <div class="padding">
+                    <div class="row container d-flex justify-content-center">
+                        <div class="card user-card-full">
+                            <div class="row m-l-0 m-r-0">
+                                <div class="col-sm-4 bg-c-lite-green user-profile">
+                                    <div class="card-block text-center text-white">
+                                        <div class="m-b-25"> <img src="" class="img-radius" alt="User-Profile-Image"> </div>
+                                        <h6 class="f-w-600">
+                                            <%= userAccount.firstName + " " + userAccount.lastName  %>
+                                        </h6>
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="card-block">
+                                        <strong><h6 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h6></strong>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <p class="m-b-10 f-w-600">Username</p>
+                                                <h6 class="text-muted f-w-400">
+                                                    <%= userAccount.username  %>
+                                                </h6>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <p class="m-b-10 f-w-600">Email</p>
+                                                <h6 class="text-muted f-w-400">
+                                                    <%= userAccount.email  %>
+                                                </h6>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <p class="m-b-10 f-w-600">Phone</p>
+                                                <h6 class="text-muted f-w-400">Phone number</h6>
+                                            </div>
+                                            <button type="button" class="btn btn-outline-primary">Edit Information</button>
+                                        </div>
+
+                                        <strong><h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Collections</h6></strong>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <p class="m-b-10 f-w-600">Liked Characters</p>
+                                                <ul class="list-group">
+                                                    <% for(var i = 0; i < userAccount.likedPosts.length; i++){ %>
+                                                        <li class="list-group-item">
+                                                            <a href="/post/<%=userAccount.likedPosts[i].postTitle %>">
+                                                                <%= userAccount.likedPosts[i].postTitle %>
+                                                            </a>
+
+                                                        </li>
+                                                        <% } %>
+                                                </ul>
+                                                </h6>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <p class="m-b-10 f-w-600">Joined Collections</p>
+                                                <ul class="list-group">
+                                                    <% for(var i = 0; i < userAccount.groupsJoined.length; i++){ %>
+                                                        <li class="list-group-item">
+                                                            <a href="/group/<%=userAccount.groupsJoined[i].groupTitle %>">
+                                                                <%= userAccount.groupsJoined[i].groupTitle %>
+                                                            </a>
+                                                        </li>
+                                                        <% } %>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <form action="/createGroup" method="GET">
+                                                <input type="submit" class="btn btn-success mb-2" value="Create Group" />
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+    </footer>
+
+</body>
+
+</html>

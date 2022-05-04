@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <%- include('../views/partials/head.ejs') %>
+</head>
+
+<body>
+    <header>
+        <%- include('../views/partials/header.ejs') %>
+    </header>
+    <main>
+        <div class="center col-4">
+            <h1 class="card-title">Register</h1>
+            <div class="card ">
+                <div class="card-body">
+                    <div class="alert alert-warning" id="pageBanner" role="alert" style="display:none"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col">
+                                <label>First Name</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="First Name" name="firstName">
+                            </div>
+                            <div class="col">
+                                <label>First Name</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Last Name" name="lastName">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>Email</label>
+                                <input type="text" class="form-control" id="email" placeholder="Email" name="email">
+                            </div>
+                            <div class="col">
+                                <label>Username</label>
+                                <input type="text" class="form-control" id="username" placeholder="Username" name="username">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>Repeat Password</label>
+                                <input type="password" class="form-control" id="passwordVerify" placeholder="Repeat Password">
+                            </div>
+                        </div>
+                        <div class="row buttonRow">
+                            <div class="col grid">
+                                <button type="submit" id="registerFormSubmit" class="btn btn-success mb-2">Register</button>
+                            </div>
+                        </div>
+                        <div class="row buttonRow">
+                            <div class="col grid">
+                                <small class="text-muted">Already have an account? <a href="/login" class="text-reset">Login</a></small>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+    </footer>
+</body>
+
+</html>

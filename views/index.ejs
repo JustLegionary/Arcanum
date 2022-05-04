@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <%- include('../views/partials/head.ejs') %>
+
+</head>
+
+<body>
+    <header>
+        <%- include('../views/partials/header.ejs') %>
+    </header>
+    <main>
+        <div class="container errorBanner">
+            <div class="alert alert-warning" id="pageBanner" role="alert">
+                <p class="errorMessage"></p>
+            </div>
+        </div>
+        <div class="container center">
+            <div class="row justify-content-md-center">
+                <div class="col col-lg-8">
+                    <h2 class="text-center">Arcanum <br> Enter your postcode to get started!</h2>
+                </div>
+            </div>
+            <div class="container d-flex justify-content-center search-box">
+                <div class="form col col-lg-6 input-group-lg">
+
+                    <form method="POST" action="/groupList" id="postcodeInputForm">
+                        <input type="text" class="form-control postcodeInput shadow" placeholder="Postcode..." id="postcode" name="postcode">
+                        <button class="bi bi-search" style="font-size: 2rem" type="submit"></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+    </footer>
+</body>
+
+</html>
